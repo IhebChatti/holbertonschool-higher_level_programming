@@ -3,10 +3,10 @@ def new_in_list(my_list, idx, element):
     my_list_cpy = []
     if (idx < 0):
         return (my_list_cpy)
-    elif (idx > len(my_list)):
+    elif (idx > len(my_list) - 1):
         return (my_list_cpy)
     else:
-        for i in range(len(my_list)):
+        for i in range(len(my_list) - 1):
             my_list_cpy.append(my_list[i])
         my_list_cpy[idx] = element
         return (my_list_cpy)

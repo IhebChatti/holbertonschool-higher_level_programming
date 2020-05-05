@@ -32,5 +32,7 @@ int is_palindromeRec(listint_t **head, listint_t *tail)
 
 int is_palindrome(listint_t **head)
 {
+	if (!head)
+		return (1);
 	return (is_palindromeRec(head, *head));
 }

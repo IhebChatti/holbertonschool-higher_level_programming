@@ -19,7 +19,6 @@ int is_palindromeRec(listint_t **head, listint_t *tail)
 		(*head) = (*head)->next;
 		return (1);
 	}
-	else
 		return (0);
 }
 

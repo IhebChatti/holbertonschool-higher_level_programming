@@ -6,7 +6,7 @@
  * is_palindromeRec - recursively check if linked list palindrome
  * @head: head of linked list
  * @tail: tail of linked list
- *
+ * 
  * Return: 1 on success, 0 on failure
  */
 
@@ -26,13 +26,14 @@ int is_palindromeRec(listint_t **head, listint_t *tail)
 /**
  * is_palindrome - check if linked list is palindrome
  * @head: head of linked list
- *
+ * 
  * Return: 1 if palindrome, 0 if not
  */
 
 int is_palindrome(listint_t **head)
 {
-	if (head == NULL || (*head)->next == NULL)
+	if (head == NULL)
 		return (1);
-	return (is_palindromeRec(head, *head));
+	else
+		return (is_palindromeRec(head, *head));
 }

@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
+    if not isinstance(roman_string, str) or len(roman_string) == 0:
+        return None
     val = {
         'I': 1,
         'V': 5,

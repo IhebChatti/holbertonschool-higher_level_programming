@@ -1,10 +1,10 @@
 #include <Python.h>
 #include <stdio.h>
 /**
- * 
- * 
- * 
- * 
+ * print_python_bytes - function to print basic info about python bytes
+ * @p: pyboject
+ *
+ * Return: void
  */
 void print_python_bytes(PyObject *p)
 {
@@ -41,11 +41,10 @@ void print_python_bytes(PyObject *p)
 }
 
 /**
+ * print_python_list - function to print info about python list
+ * @p: pyobject
  * 
- * 
- * 
- * 
- * 
+ * Return: void
  */
 
 void print_python_list(PyObject *p)
@@ -67,4 +66,3 @@ void print_python_list(PyObject *p)
             print_python_bytes(item->ob_item[i]);
 	}
 }
-

@@ -1,4 +1,4 @@
-#include <python3.8/Python.h>
+#include <Python.h>
 
 /**
  * print_python_float - print float value

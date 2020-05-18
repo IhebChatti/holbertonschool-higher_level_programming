@@ -20,7 +20,7 @@ void print_python_float(PyObject *p)
         printf("  [ERROR] Invalid Float Object\n");
         return;
     }
-    printf("  value: %02f\n", value);
+    printf("  value: %2.2f\n", value);
 }
 
 /**

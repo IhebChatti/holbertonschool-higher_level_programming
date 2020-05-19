@@ -25,11 +25,12 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-    """ area method """
     def area(self):
+        """ returns the area of suqare """
         return self.size ** 2
 
     def my_print(self):
+        """ prints a square in # """
         for i in range(self.size):
             for j in range(self.size):
                 print('#', end='')

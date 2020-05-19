@@ -5,10 +5,10 @@ import math
 
 
 class MagicClass:
-    """ Magic Class """
+    """ Magic Class defines a circle """
 
     def __init__(self, radius=0):
-        """ defining init
+        """ initializing a circle
         args:
             radius """
         self.__radius = 0
@@ -17,9 +17,13 @@ class MagicClass:
         self.__radius = radius
 
     def area(self):
-        """ returns area of circle """
+        """
+        returns area of circle
+        """
         return self.__radius ** 2 * math.pi
 
     def circumference(self):
-        """ returns circumference of circle """
+        """
+        returns circumference of circle
+        """
         return 2 * math.pi * self.__radius

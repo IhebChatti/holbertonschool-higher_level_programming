@@ -47,6 +47,8 @@ class Square:
 
     def my_print(self):
         """ prints a square in # """
+        for i in range(self.__position[1]):
+            print()
         for i in range(self.__size):
             for k in range(self.__position[0]):
                 print(" ", end="")

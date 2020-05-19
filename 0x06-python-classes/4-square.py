@@ -3,6 +3,7 @@
 
 
 class Square:
+    """ Square """
     def __init__(self, size=0):
         """ Initializing a Square
         args:
@@ -23,4 +24,4 @@ class Square:
 
     def area(self):
         """ returns area of square """
-        return (self.__size ** 2)
+        return self.__size ** 2

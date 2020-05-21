@@ -9,7 +9,7 @@ import add_integer from 0-add_integer.py
 
 Expecting TypeError if a is not an integer/float
 
-    >>> add_integer(True, 5)
+    >>> add_integer('hi', 5)
     Traceback (most recent call last):
         ...
     TypeError: a must be an integer

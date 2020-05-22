@@ -1,4 +1,13 @@
+#!/usr/bin/python3
 def text_indentation(text):
+    """text_indentation
+
+    Arguments:
+        text {[str]} -- [text to be indented]
+
+    Raises:
+        TypeError: [if text given is not str]
+    """
     if not isinstance(text, str):
         raise TypeError('text must be a string')
 

@@ -4,7 +4,7 @@ import numpy as np
 
 
 def lazy_matrix_mul(m_a, m_b):
-    """[summary]
+    """[lazy_matrix_mul using numpy]
 
     Arguments:
         m_a {[list of lists]} -- [matrice 1]

@@ -26,4 +26,3 @@ Expecting right answer
 
     >>> say_my_name('hmed', 'satour')
     My name is hmed satour
-

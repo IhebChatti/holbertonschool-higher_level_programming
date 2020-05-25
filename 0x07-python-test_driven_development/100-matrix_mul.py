@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""defining matrix mul
+"""
+
+
 def matrix_mul(m_a, m_b):
     """[matr_mul]
 

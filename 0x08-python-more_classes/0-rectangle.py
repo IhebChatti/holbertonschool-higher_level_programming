@@ -4,6 +4,6 @@
 
 
 class Rectangle:
-    """initializing rectangle
+    """Rectangle
     """
     pass

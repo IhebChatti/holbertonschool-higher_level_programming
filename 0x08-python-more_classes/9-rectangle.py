@@ -153,4 +153,4 @@ class Rectangle:
         Returns:
             [Rectangle] -- [a square]
         """
-        return cls(size, size)
+        return Rectangle(size, size)

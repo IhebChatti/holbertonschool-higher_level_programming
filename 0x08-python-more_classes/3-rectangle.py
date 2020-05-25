@@ -99,5 +99,5 @@ class Rectangle:
             if i + 1 < self.height:
                 rec += "\n"
         if self.width == 0 or self.height == 0:
-            rec = "\n"
+            rec = ""
         return rec

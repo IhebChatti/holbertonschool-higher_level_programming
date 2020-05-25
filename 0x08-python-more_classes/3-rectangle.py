@@ -87,10 +87,10 @@ class Rectangle:
         return (self.height + self.width) * 2
 
     def __str__(self):
-        """string representation of rectangle in "#"
+        """prints the rectangle in "#"
 
         Returns:
-            [str] -- [returns the string rep of rectangle]
+            [str] -- [printes the rectangle in "#"]
         """
         rec_rep = ""
         for i in range(self.height):

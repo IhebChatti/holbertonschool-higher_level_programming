@@ -103,4 +103,9 @@ class Rectangle:
         return rec
 
     def __repr__(self):
+        """representation of rectangle
+
+        Returns:
+            [] -- [representation or rectangle]
+        """
         return 'Rectangle''({}, {})'.format(self.width, self.height)

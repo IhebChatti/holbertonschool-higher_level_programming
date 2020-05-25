@@ -92,11 +92,11 @@ class Rectangle:
         Returns:
             [str] -- [printes the rectangle in "#"]
         """
-        rec_rep = ""
+        rec = ""
         for i in range(self.height):
             for j in range(self.width):
-                rec_rep += "#"
-            rec_rep += "\n"
+                rec += "#"
+            rec += "\n"
         if self.width == 0 or self.height == 0:
-            rec_rep = "\n"
-        return rec_rep
+            rec = "\n"
+        return rec

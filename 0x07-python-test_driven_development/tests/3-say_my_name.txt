@@ -26,13 +26,3 @@ Expecting right answer
 
     >>> say_my_name('hmed', 'satour')
     My name is hmed satour
-
-Expecting first_name only
-
-    >>> say_my_name('hmed')
-    My name is hmed
-
-Expected last name only
-
-    >>> say_my_name("", 'satour')
-    My name is satour

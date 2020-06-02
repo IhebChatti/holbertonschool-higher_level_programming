@@ -2,6 +2,7 @@
 """add_attribute func
 """
 
+
 def add_attribute(object, name, value):
     """add_attribute function
 

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import json
 """[from str to object]
 """
+import json
 
 
 def from_json_string(my_str):

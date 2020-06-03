@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+"""[pascal triangle function]
+"""
 
 def pascal_triangle(n):
     """[pascal triangle]

@@ -13,7 +13,7 @@ def number_of_lines(filename=""):
         [int] -- [number of lines]
     """
     count = 0
-    with open("my_file_0.txt",  encoding="utf-8") as myFile:
+    with open("my_file_0.txt", encoding="utf-8") as myFile:
         for line in myFile:
             count += 1
     return count

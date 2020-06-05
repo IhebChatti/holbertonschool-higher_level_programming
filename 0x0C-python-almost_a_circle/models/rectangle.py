@@ -1,38 +1,66 @@
 #!/usr/bin/python3
 from models.base import Base
+"""[Rectangle definition]
+"""
 
 
 class Rectangle(Base):
+    """[Rectangle class]
+
+    Args:
+        Base ([class]): [base class that rectangle inherits from]
+    """
+
     def __init__(self, width, height, x=0, y=0, id=None):
+        """[Rectangle initialization]
+
+        Args:
+            width ([int]): [width of rectangle]
+            height ([int]): [height of rectangle]
+            x (int, optional): [x coordinates]. Defaults to 0.
+            y (int, optional): [y coordinates]. Defaults to 0.
+            id ([int], optional): [id of rectangle]. Defaults to None.
+        """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
     @property
     def width(self):
-        return self.width
+        """[width getter}
+        Returns:
+            [int] -- [returns the width]
+        """
+        return self.__width
 
     @width.setter
     def width(self, value):
+        """[width setter]
+        Arguments:
+            value {[int]} -- [the value of width]
+        Raises:
+            TypeError: [if value is not an int]
+            ValueError: [if value is negative]
+        """
         if not isinstance(value, int):
             raise TypeError('width must be an integer')
-        if value < 0:
-            raise ValueError('width must be >= 0')
-        self.width = value
+        if value <= 0:
+            raise ValueError('width must be > 0')
+        self.__width = value
 
     @property
     def height(self):
-        """height getter
+        """[height getter}
         Returns:
             [int] -- [returns the height]
         """
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
-        """height setter
+        """[height setter]
         Arguments:
             value {[int]} -- [the value of height]
         Raises:
@@ -41,42 +69,58 @@ class Rectangle(Base):
         """
         if not isinstance(value, int):
             raise TypeError('height must be an integer')
-        if value < 0:
-            raise ValueError('height must be >= 0')
-        self.height = value
+        if value <= 0:
+            raise ValueError('height must be > 0')
+        self.__height = value
 
     @property
     def x(self):
         """[x getter]
 
         Returns:
-            [int]: [x]
+            [int]: [x coordinates]
         """
-        return self.x
+        return self.__x
 
     @x.setter
     def x(self, value):
-        """[x setter]
+        """[x getter]
 
         Args:
-            value ([int]): [x]
+            value ([int]): [value assigned to x]
+
+        Raises:
+            TypeError: [if value is not integer]
+            ValueError: [if value is negative]
         """
-        self.x = value
+        if not isinstance(value, int):
+            raise TypeError('x must be an integer')
+        if value < 0:
+            raise ValueError('x must be >= 0')
+        self.__x = value
 
     @property
     def y(self):
         """[y getter]
 
         Returns:
-            [int]: [y]
+            [int]: [y coordinates]
         """
-        return self.y
+        return self.__y
 
     @y.setter
     def y(self, value):
         """[y setter]
 
         Args:
-            value ([int]): [y]
+            value ([int]): [value assigned to y]
+
+        Raises:
+            TypeError: [if vlaue is not integer]
+            ValueError: [if value negative]
         """
-        self.y = value
+        if not isinstance(value, int):
+            raise TypeError('y must be an integer')
+        if value < 0:
+            raise ValueError('y must be >= 0')
+        self.__y = value

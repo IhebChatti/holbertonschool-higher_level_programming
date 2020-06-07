@@ -2,6 +2,7 @@
 """[Base Definition]
 """
 import json
+from os import path
 
 
 class Base:
@@ -79,3 +80,17 @@ class Base:
             dummy = cls(1)
             dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """[load from file method]
+
+        Returns:
+            [list]: [list of instances]
+        """
+        if path.exists("{}.json".format(cls.__name__)) is False:
+            return []
+        with open(cls.__name__ + ".json", mode="r") as MyFile:
+            my_list = cls.from_json_string(MyFile.read())
+            return [cls.create(**items) for items in my_list]
+

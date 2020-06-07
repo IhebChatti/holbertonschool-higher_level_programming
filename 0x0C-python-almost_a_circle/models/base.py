@@ -33,5 +33,34 @@ class Base:
             [str]: [string representation of list of dicts]
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return "[]"
+            return []
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """[save_to_file static mehtod]
+
+        Args:
+            list_objs ([list of objs]): [list of objs]
+        """
+        my_list = []
+        with open(cls.__name__ + ".json", mode="w") as MyFile:
+            if list_objs is None:
+                MyFile.write(Base.to_json_string(my_list))
+            for obj in list_objs:
+                my_list.append(obj.to_dictionary())
+            MyFile.write(Base.to_json_string(my_list))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """[from_json_string method]
+
+        Args:
+            json_string ([json_string]): [json string]
+
+        Returns:
+            [list]: [list of json string representation]
+        """
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)

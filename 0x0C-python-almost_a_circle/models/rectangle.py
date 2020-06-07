@@ -169,3 +169,11 @@ class Rectangle(Base):
                 setattr(self, k, v)
         for i in range(len(args)):
             setattr(self, attr[i], args[i])
+
+    def to_dictionary(self):
+        """[to dict method]
+
+        Returns:
+            [dict]: [dict representation of rectangle]
+        """
+        return self.__dict__

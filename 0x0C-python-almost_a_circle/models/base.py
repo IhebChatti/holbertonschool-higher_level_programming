@@ -106,10 +106,10 @@ class Base:
             if list_objs is None:
                 MyFile.write("[]")
             if cls.__name__ == "Rectangle":
-                attrs = ["id", "width", "height", "x", "y"]
+                fnames = ["id", "width", "height", "x", "y"]
             elif cls.__name__ == "Square":
-                attrs = ["id", "size", "x", "y"]
-            spamwriter = csv.DictWriter(MyFile, attrs)
+                fnames = ["id", "size", "x", "y"]
+            spamwriter = csv.DictWriter(MyFile, fieldnames = fnames)
             spamwriter.writeheader()
             for i in list_objs:
                 spamwriter.writerow(i.to_dictionary())

@@ -2,6 +2,7 @@
 """[Base Definition]
 """
 import json
+import csv
 from os import path
 
 
@@ -94,3 +95,39 @@ class Base:
             my_list = cls.from_json_string(MyFile.read())
             return [cls.create(**items) for items in my_list]
 
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """[save to csv file method]
+
+        Args:
+            list_objs ([list]): [list of objs]
+        """
+        with open(cls.__name__ + ".csv", mode="w") as MyFile:
+            if list_objs is None:
+                MyFile.write("[]")
+            if cls.__name__ == "Rectangle":
+                attrs = ["id", "width", "height", "x", "y"]
+            elif cls.__name__ == "Square":
+                attrs = ["id", "size", "x", "y"]
+            spamwriter = csv.DictWriter(MyFile, attrs)
+            spamwriter.writeheader()
+            for i in list_objs:
+                spamwriter.writerow(i.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """[load from csv file method]
+
+        Returns:
+            [lsit]: [list of objects]
+        """
+        if path.exists("{}.csv".format(cls.__name__)) is False:
+            return []
+        with open(cls.__name__ + ".csv", mode="r") as MyFile:
+            my_list = []
+            spamreader = csv.DictReader(MyFile)
+            for _dict in spamreader:
+                for key, val in _dict.items():
+                    _dict[key] = int(val)
+                my_list.append(cls.create(**_dict))
+            return my_list

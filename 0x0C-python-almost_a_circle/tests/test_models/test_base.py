@@ -42,5 +42,30 @@ class TestBase(unittest.TestCase):
         base3 = Base(None)
         self.assertEqual(base1.id, base3.id - 2)
 
+    def test_to_json_string(self):
+        """[test_to_json_string]
+        """
+        r1 = Rectangle(10, 7, 2, 8)
+        dictionary = r1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(type(json_dictionary), str)
+
+    def test_from_json_string(self):
+        """[test_from_json_string]
+        """
+        list_input = [{'id': 89, 'width': 10, 'height': 4},
+                      {'id': 7, 'width': 1, 'height': 7}]
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+        self.assertEqual(type(list_output), list)
+
+    def test_create(self):
+        """[test_create]
+        """
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertEqual(r1 is r2, False)
+
 if __name__ == '__main__':
     unittest.main()

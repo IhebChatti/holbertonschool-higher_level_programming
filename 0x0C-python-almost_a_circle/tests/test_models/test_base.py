@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-import unittest
-from models.base import Base
 """[test_base]
 """
+import unittest
+from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
@@ -40,7 +41,6 @@ class TestBase(unittest.TestCase):
         base2 = Base(None)
         base3 = Base(None)
         self.assertEqual(base1.id, base3.id - 2)
-
 
 if __name__ == '__main__':
     unittest.main()

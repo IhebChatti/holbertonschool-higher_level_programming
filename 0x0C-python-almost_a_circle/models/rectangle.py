@@ -176,5 +176,5 @@ class Rectangle(Base):
         Returns:
             [dict]: [dict representation of rectangle]
         """
-        return {'x': self.x, 'y': self.y, 'id': self.id,
-                'height': self.height, 'width': self.width}
+        return {'x': self.x, 'width': self.width, 'id': self.id,
+                'height': self.height, 'y': self.y}

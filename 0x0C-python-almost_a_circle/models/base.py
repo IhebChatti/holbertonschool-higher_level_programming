@@ -109,7 +109,7 @@ class Base:
                 fnames = ["id", "width", "height", "x", "y"]
             elif cls.__name__ == "Square":
                 fnames = ["id", "size", "x", "y"]
-            spamwriter = csv.DictWriter(MyFile, fieldnames = fnames)
+            spamwriter = csv.DictWriter(MyFile, fieldnames=fnames)
             spamwriter.writeheader()
             for i in list_objs:
                 spamwriter.writerow(i.to_dictionary())

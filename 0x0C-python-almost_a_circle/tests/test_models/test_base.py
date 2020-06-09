@@ -67,5 +67,15 @@ class TestBase(unittest.TestCase):
         r2 = Rectangle.create(**r1_dictionary)
         self.assertEqual(r1 is r2, False)
 
+    def test_load_from_file(self):
+        """[test_load_from_file]
+        """
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rectangles_input = [r1, r2]
+        Rectangle.save_to_file(list_rectangles_input)
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(type(list_rectangles_output), list)
+
 if __name__ == '__main__':
     unittest.main()

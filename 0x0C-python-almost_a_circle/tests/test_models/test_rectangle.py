@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import unittest
-from models.rectangle import Rectangle
 """[TestRectangle]
 """
+import unittest
+from models.rectangle import Rectangle
 
 
 class TestRectangle(unittest.TestCase):
@@ -47,3 +47,20 @@ class TestRectangle(unittest.TestCase):
         """
         rec1 = Rectangle(2, 2)
         self.assertEqual(rec1.area(), 4)
+
+    def test_None(self):
+        """[test None as param]
+        """
+        with self.assertRaises(TypeError):
+            Rectangle(None)
+
+    def test_multiple_recs(self):
+        """[test multiple recs]
+        """
+        rec1 = Rectangle(1, 2)
+        rec2 = Rectangle(3, 4)
+        rec3 = Rectangle(5, 6)
+        self.assertEqual(rec1.id, rec3.id - 2)
+
+if __name__ == '__main__':
+    unittest.main()

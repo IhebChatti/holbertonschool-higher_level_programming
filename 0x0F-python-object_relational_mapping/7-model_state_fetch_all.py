@@ -3,7 +3,6 @@
 """
 
 import sys
-import MySQLdb
 from sqlalchemy import create_engine
 from model_state import State, Base
 from sqlalchemy.orm import Session

@@ -15,7 +15,7 @@ if __name__ == "__main__":
     name = args[4]
     db = MySQLdb.connect("localhost", username, password, dbname, 3306)
     c = db.cursor()
-    c.execute("""SELECT * FROM states WHERE name = '%s'""" % (name))
+    c.execute("""SELECT * FROM states WHERE name = %s""", [name])
     row = c.fetchall()
     for i in row:
         print(i)

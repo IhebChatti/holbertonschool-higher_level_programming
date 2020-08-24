@@ -9,10 +9,10 @@ if __name__ == "__main__":
     owner = argv[2]
     url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
     try:
-    req = requests.get(url)
-    data = req.json()
-    for i in range(10):
-        print("{}: {}".format(data[i].get("sha"), data[i].get(
-            "commit").get("author").get("name")))
+        req = requests.get(url)
+        data = req.json()
+        for i in range(10):
+            print("{}: {}".format(data[i].get("sha"), data[i].get(
+                "commit").get("author").get("name")))
     except ValueError:
         pass

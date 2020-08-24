@@ -31,7 +31,6 @@ if __name__ == "__main__":
     }
     search_params = {
         'q': string,
-        'result_type': 'recent',
         'count': 5
     }
     search_url = '{}1.1/search/tweets.json'.format(base_url)

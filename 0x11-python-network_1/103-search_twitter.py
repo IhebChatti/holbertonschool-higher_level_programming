@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""[Python script that takes in 3 strings and sends a search request to the Twitter API]
+"""[Python script that takes in 3 strings
+    and sends a search request to the Twitter API]
 """
 import base64
 from sys import argv
@@ -36,7 +37,7 @@ if __name__ == "__main__":
     search_url = '{}1.1/search/tweets.json'.format(base_url)
     search_resp = requests.get(search_url, headers=search_headers,
                                params=search_params).json().get('statuses')
-    for value in search_resp:
-        print("[{}] {} by {}".format(value.get('id'),
-                                     value.get('text'),
-                                     value.get('user').get('name')))
+    for values in search_resp:
+        print("[{}] {} by {}".format(values.get('id'),
+                                     values.get('text'),
+                                     values.get('user').get('name')))

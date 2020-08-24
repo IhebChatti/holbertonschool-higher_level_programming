@@ -6,10 +6,10 @@ import requests
 from sys import argv
 if __name__ == "__main__":
     if len(argv) > 1:
-        letter = argv[1]
+        q = argv[1]
     else:
-        letter = ""
-    value = {"q": letter}
+        q = ""
+    value = {"q": q}
     url = "http://0.0.0.0:5000/search_user"
     r = requests.post(url, value)
     try:

@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const dict = require('./101-data').dict;
-const new_dict = {};
+const sortedDict = {};
 for (const key in dict) {
-  (dict[key] in new_dict) ? new_dict[dict[key]].push(key) : new_dict[dict[key]] = Array(key);
+  (dict[key] in sortedDict) ? sortedDict[dict[key]].push(key) : sortedDict[dict[key]] = Array(key);
 }
-console.log(new_dict);
+console.log(sortedDict);

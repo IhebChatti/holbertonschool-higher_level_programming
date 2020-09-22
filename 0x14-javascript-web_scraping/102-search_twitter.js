@@ -25,7 +25,7 @@ const authParams = {
 
 let accessToken;
 request.post(authParams, (error, response, body) => {
-  (error) ? console.log(error) : accessToken = JSON.parse(body).accessToken;
+  (error) ? console.log(error) : accessToken = JSON.parse(body).access_token;
   search(accessToken);
 });
 
@@ -39,16 +39,15 @@ const search = (accessToken) => {
 
     qs: {
       q: searchString,
-      count: '5'
+      count: 5
     }
   };
 
   request.get(searchParams, (error, response, body) => {
-    let tweets;
-    (error) ? console.log(error) : tweets = JSON.parse(body).statuses;
-    for (const tweet in tweets) {
-      console.log(JSON.parse(tweet));
-      console.log('[' + JSON.parse(tweet).id + ']' + JSON.parse(tweet).text + 'by' + JSON.parse(tweet).name);
+    if (!error) {
+      for (const tweet of JSON.parse(body).statuses) {
+        console.log('[' + tweet.id + ']' + tweet.text + ' by ' + tweet.user.name);
+      }
     }
   });
 };

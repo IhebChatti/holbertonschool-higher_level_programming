@@ -29,20 +29,20 @@ request.post(authParams, (error, response, body) => {
   search(accessToken);
 });
 
-let search = (accessToken) => {
+const search = (accessToken) => {
   const searchParams = {
     url: baseURL + '1.1/search/tweets.json',
-  
+
     headers: {
       Authorization: 'Bearer ' + accessToken
     },
-  
+
     qs: {
       q: searchString,
       count: '5'
     }
   };
-  
+
   request.get(searchParams, (error, response, body) => {
     let tweets;
     (error) ? console.log(error) : tweets = JSON.parse(body).statuses;
@@ -51,5 +51,4 @@ let search = (accessToken) => {
       console.log('[' + JSON.parse(tweet).id + ']' + JSON.parse(tweet).text + 'by' + JSON.parse(tweet).name);
     }
   });
-  
 };

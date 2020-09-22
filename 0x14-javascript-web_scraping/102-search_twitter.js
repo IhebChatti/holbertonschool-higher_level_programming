@@ -13,12 +13,12 @@ const baseURL = 'https://api.twitter.com/';
 const authParams = {
   url: baseURL + 'oauth2/token',
 
-  auth_headers: {
+  headers: {
     Authorization: 'Basic ' + encodedKey,
     'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
   },
 
-  auth_data: {
+  form: {
     grant_type: 'client_credentials'
   }
 };
@@ -26,25 +26,30 @@ const authParams = {
 let accessToken;
 request.post(authParams, (error, response, body) => {
   (error) ? console.log(error) : accessToken = JSON.parse(body).accessToken;
+  search(accessToken);
 });
-const searchParams = {
-  url: baseURL + '1.1/search/tweets.json',
 
-  search_headers: {
-    Authorization: 'Bearer ' + accessToken
-  },
-
-  search_params: {
-    q: searchString,
-    count: 5
-  }
+let search = (accessToken) => {
+  const searchParams = {
+    url: baseURL + '1.1/search/tweets.json',
+  
+    headers: {
+      Authorization: 'Bearer ' + accessToken
+    },
+  
+    qs: {
+      q: searchString,
+      count: '5'
+    }
+  };
+  
+  request.get(searchParams, (error, response, body) => {
+    let tweets;
+    (error) ? console.log(error) : tweets = JSON.parse(body).statuses;
+    for (const tweet in tweets) {
+      console.log(JSON.parse(tweet));
+      console.log('[' + JSON.parse(tweet).id + ']' + JSON.parse(tweet).text + 'by' + JSON.parse(tweet).name);
+    }
+  });
+  
 };
-
-request.get(searchParams, (error, response, body) => {
-  let tweets;
-  (error) ? console.log(error) : tweets = JSON.parse(body).statuses;
-  for (const tweet in tweets) {
-    console.log(JSON.parse(tweet));
-    console.log('[' + JSON.parse(tweet).id + ']' + JSON.parse(tweet).text + 'by' + JSON.parse(tweet).name);
-  }
-});
